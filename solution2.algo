@@ -1,0 +1,47 @@
+ALGORITHM checkpoint algo 2
+VAR
+    set1: ARRAY_OF INTEGER[n1];
+    set2: ARRAY_OF INTEGER[n2];
+    n1,n2,somme,i,j:INTEGER
+BEGIN
+   
+    REPEAT
+         Write("inter length of set1")
+    Read(n1)
+        Write("inter length of set2")
+    Read(n2)
+    UNTIL (n1>0 && n2>0 )
+    FOR i FROM 0 TO n1-1 STEP step  DO
+       Write("donner l' element  de tableau")
+    Read(set1[i])
+    END_FOR
+     
+    somme:=0
+    FOR i FROM 0 TO n1-1 STEP 1  DO
+      j:=0
+      WHILE (set1[i]<>set2[j] OR j<n2) DO
+          j++
+
+      END_WHILE
+
+    IF (j==n2) THEN
+        somme=somme+set1[i]
+    END_IF
+
+
+    END_FOR
+
+        FOR i FROM 0 TO n2-1 STEP 1  DO
+      j:=0
+      WHILE (set2[i]<>set1[j] OR j<n1) DO
+          j++
+
+      END_WHILE
+
+    IF (j==n2) THEN
+        somme=somme+set2[i]
+    END_IF
+
+
+    END_FOR
+END
