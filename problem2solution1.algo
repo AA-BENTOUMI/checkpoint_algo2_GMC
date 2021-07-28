@@ -1,0 +1,42 @@
+ALGORITHM checkpoint algo 2
+VAR
+    set1: ARRAY_OF INTEGER[n1];
+    set2: ARRAY_OF INTEGER[n2];
+    n1,n2,somme,i,j:INTEGER
+BEGIN
+   
+    REPEAT
+         Write("enter length of set1")
+    Read(n1)
+        Write("enter length of set2")
+    Read(n2)
+    UNTIL (n1>0 && n2>0 )
+    FOR i FROM 0 TO n1-1 STEP step  DO
+       Write("donner l'element de tableau")
+    Read(set1[i])
+    END_FOR
+    //solution 1 
+    somme:=0
+    FOR i FROM 0 TO n1-1 STEP 1  DO
+    egaux:=true
+        FOR j FROM 0 TO n2-1 STEP 1  DO
+           IF (set1[i]=set2[j]) THEN
+             egaux=false;
+             break;
+           END_IF
+        END_FOR
+    IF( NOT egaux) THEN{
+     somme=somme+set1[i]
+ }
+    END_FOR
+    Write("the sum of overlapping elements in two sets.",somme);
+END
+
+
+
+
+
+
+
+
+

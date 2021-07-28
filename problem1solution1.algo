@@ -6,13 +6,13 @@ VAR
 BEGIN
    
     REPEAT
-         Write("inter length of set1")
+         Write("enter length of set1")
     Read(n1)
-        Write("inter length of set2")
+        Write("enter length of set2")
     Read(n2)
     UNTIL (n1>0 && n2>0 )
     FOR i FROM 0 TO n1-1 STEP step  DO
-       Write("donner l' element  de tableau")
+       Write("donner l'element de tableau")
     Read(set1[i])
     END_FOR
     //solution 1 
@@ -29,6 +29,7 @@ BEGIN
      somme=somme+set1[i]
  }
     END_FOR
+     Write("the sum of all distinct elements from the sets.",somme);
 END
 
 

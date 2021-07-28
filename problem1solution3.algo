@@ -1,0 +1,29 @@
+ALGORITHM solution hash table
+VAR
+   htab : HASH_TABLE<INTEGER,INTEGER>;
+    set1: ARRAY_OF INTEGER[n1];
+    set2: ARRAY_OF INTEGER[n2];
+    n1,n2,somme,i:INTEGER
+BEGIN
+      FOR i FROM 0 TO set1.length -1 STEP 1  DO
+       IF (htab.lookup(set1[i]) = TRUE) THEN
+           count := htab.get(set1[i]);
+           htab.insert(set1[i],count+1);
+       ELSE
+           htab.insert(set1[i],1);
+       END_IF
+   END_FOR
+    FOR i FROM 0 TO set2.length -1 STEP 1  DO
+       IF (htab.lookup(set2[i]) = TRUE) THEN
+           count := htab.get(set2[i]);
+           htab.insert(set2[i],count+1);
+       ELSE
+           htab.insert(set2[i],1);
+       END_IF
+   END_FOR
+   sum=0
+   IF (htab.value=1) THEN
+       sum += key * 1;
+   END_IF
+    Write("the sum of all distinct elements from the sets.",sum);
+END

@@ -41,7 +41,6 @@ BEGIN
     IF (j==n2) THEN
         somme=somme+set2[i]
     END_IF
-
-
     END_FOR
+     Write("the sum of all distinct elements from the sets.",somme);
 END
